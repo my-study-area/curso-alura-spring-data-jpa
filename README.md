@@ -16,3 +16,12 @@
 ### Aula 01.05 - Configurando o banco
 
 ### Aula 01.06 - Gerando o banco de dados
+
+### Aula 01.07 - Sobre SpringAplication.run()
+Dentro da nossa classe SpringDataAplication temos nosso método main, que no Java é utilizado para iniciar uma aplicação. Dentro desse método adicionamos uma linha relacionada ao Spring:
+```java
+SpringApplication.run(SpringDataApplication.class, args)
+```
+Qual a função dessa linha?
+
+`R:` Ela faz com que o framework do Spring seja inicializado junto a nossa aplicação. Além disso, existem algumas anotações como a @SpringBootApplication que devemos usar.
