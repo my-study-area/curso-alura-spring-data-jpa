@@ -12,3 +12,5 @@
 ### Aula 01.04 - Criando a aplicação
 - `@SpringBootApplication`: utilizamos para que ao iniciar o Framework do Spring, ele percorra todas as anotações que temos dentro da nossa aplicação para executá-las.
 - `SpringApplication.run(CursoAluraSpringDataJpaApplication.class, args);` : inicia o Framework do Spring.
+
+### Aula 01.05 - Configurando o banco
