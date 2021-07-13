@@ -14,3 +14,5 @@
 - `SpringApplication.run(CursoAluraSpringDataJpaApplication.class, args);` : inicia o Framework do Spring.
 
 ### Aula 01.05 - Configurando o banco
+
+### Aula 01.06 - Gerando o banco de dados
