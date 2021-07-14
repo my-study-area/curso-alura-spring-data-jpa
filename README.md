@@ -29,3 +29,8 @@ Qual a função dessa linha?
 ### Aula 01.08 - Usando CrudRepository
 
 ### Aula 01.09 - Inserindo valores
+
+### Aula 01.10 - Qual o benefício do CrudRepository?
+Qual a principal vantagem que temos em utilizar a interface CrudRepository dentro do nosso projeto?
+
+`R:` Realizar métodos CRUD sem a necessidade de criar os objetos do JPA. Sem a necessidade de criar nenhum objeto do JPA, conseguimos realizar métodos do CRUD.
