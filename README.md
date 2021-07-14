@@ -34,3 +34,8 @@ Qual a função dessa linha?
 Qual a principal vantagem que temos em utilizar a interface CrudRepository dentro do nosso projeto?
 
 `R:` Realizar métodos CRUD sem a necessidade de criar os objetos do JPA. Sem a necessidade de criar nenhum objeto do JPA, conseguimos realizar métodos do CRUD.
+
+### Aula 01.11 - Para saber mais: Injeção de Dependências
+O Spring ficou famoso por causa do Injeção de dependências (ou Dependency Injection (DI)), mas não foi o primeiro framework nem é o único que oferece esse recurso.
+
+Hoje em dia a DI é amplamente usada e outros frameworks bem comuns são [Guice da Google](https://github.com/google/guice) e o [CDI](https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html) do Jakarta EE.
