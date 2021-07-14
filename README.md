@@ -39,3 +39,11 @@ Qual a principal vantagem que temos em utilizar a interface CrudRepository dentr
 O Spring ficou famoso por causa do Injeção de dependências (ou Dependency Injection (DI)), mas não foi o primeiro framework nem é o único que oferece esse recurso.
 
 Hoje em dia a DI é amplamente usada e outros frameworks bem comuns são [Guice da Google](https://github.com/google/guice) e o [CDI](https://jakarta.ee/specifications/cdi/2.0/cdi-spec-2.0.html) do Jakarta EE.
+
+### Aula 01.12 - Faça como eu fiz
+
+### Aula 01.13 - O que aprendemos?
+- qual a stack necessária para nosso projeto;
+- configurar nosso projeto Spring para conectar ao banco de dados;
+- criar tabelas de forma automática e alterar o nome delas conforme a necessidade da aplicação;
+- utilizar os repositórios do framework para trazer agilidade nas nossas operações de CRUD.
