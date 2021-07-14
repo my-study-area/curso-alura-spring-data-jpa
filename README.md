@@ -47,3 +47,9 @@ Hoje em dia a DI é amplamente usada e outros frameworks bem comuns são [Guice 
 - configurar nosso projeto Spring para conectar ao banco de dados;
 - criar tabelas de forma automática e alterar o nome delas conforme a necessidade da aplicação;
 - utilizar os repositórios do framework para trazer agilidade nas nossas operações de CRUD.
+
+## Módulo 02 - Operações CRUD
+
+### Aula 02.01 - Projeto da aula anterior
+
+### Aula 02.02 - Salvando o registro
