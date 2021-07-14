@@ -27,3 +27,5 @@ Qual a função dessa linha?
 `R:` Ela faz com que o framework do Spring seja inicializado junto a nossa aplicação. Além disso, existem algumas anotações como a @SpringBootApplication que devemos usar.
 
 ### Aula 01.08 - Usando CrudRepository
+
+### Aula 01.09 - Inserindo valores
