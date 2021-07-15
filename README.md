@@ -53,3 +53,5 @@ Hoje em dia a DI é amplamente usada e outros frameworks bem comuns são [Guice 
 ### Aula 02.01 - Projeto da aula anterior
 
 ### Aula 02.02 - Salvando o registro
+
+### Aula 02.03 - Atualizando o registro
