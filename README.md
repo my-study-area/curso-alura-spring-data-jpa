@@ -60,3 +60,6 @@ Hoje em dia a DI é amplamente usada e outros frameworks bem comuns são [Guice 
 No framework do Spring Data, quais métodos são utilizados para quais operações?
 
 `R:` Para inserir ou atualizar usamos o método save. O método save serve para entidades transient e detached.
+
+### Aula 02.05 - Visualizar e deletar
+
