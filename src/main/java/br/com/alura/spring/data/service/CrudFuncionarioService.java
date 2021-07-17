@@ -66,10 +66,7 @@ public class CrudFuncionarioService {
         Integer idCargo = scanner.nextInt();
 
         Optional<Cargo> cargo = cargoRepository.findById(idCargo);
-        Funcionario funcionario = new Funcionario(nome, cpf, salario);
-        if (cargo.isPresent()) {
-            funcionario.setCargo(cargo.get());
-        }
+        Funcionario funcionario = new Funcionario(nome, cpf, salario, cargo.get());
         funcionarioRepository.save(funcionario);
         System.out.println("Salvo");
     }

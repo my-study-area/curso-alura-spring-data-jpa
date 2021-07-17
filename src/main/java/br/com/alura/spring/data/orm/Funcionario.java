@@ -27,11 +27,12 @@ public class Funcionario {
         this.dataContratacao = LocalDate.now();
     }
 
-    public Funcionario(String nome, String cpf, Double salario) {
+    public Funcionario(String nome, String cpf, Double salario, Cargo cargo) {
         this();
         this.nome = nome;
         this.cpf = cpf;
         this.salario = salario;
+        this.cargo = cargo;
     }
 
     public Funcionario(Integer id, String nome, String cpf, Double salario, Cargo cargo) {
