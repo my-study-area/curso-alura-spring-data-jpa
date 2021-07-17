@@ -2,11 +2,14 @@ package br.com.alura.spring.data.service;
 
 import br.com.alura.spring.data.orm.Cargo;
 import br.com.alura.spring.data.orm.Funcionario;
+import br.com.alura.spring.data.orm.UnidadeTrabalho;
 import br.com.alura.spring.data.repository.CargoRepository;
 import br.com.alura.spring.data.repository.FuncionarioRepository;
+import br.com.alura.spring.data.repository.UnidadeRepository;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -15,10 +18,12 @@ public class CrudFuncionarioService {
     private Boolean system = true;
     private final FuncionarioRepository funcionarioRepository;
     private final CargoRepository cargoRepository;
+    private final UnidadeRepository unidadeRepository;
 
-    public CrudFuncionarioService(FuncionarioRepository funcionarioRepository, CargoRepository cargoRepository) {
+    public CrudFuncionarioService(FuncionarioRepository funcionarioRepository, CargoRepository cargoRepository, UnidadeRepository unidadeRepository) {
         this.funcionarioRepository = funcionarioRepository;
         this.cargoRepository = cargoRepository;
+        this.unidadeRepository = unidadeRepository;
     }
 
     public void inicial(Scanner scanner) {
@@ -65,10 +70,36 @@ public class CrudFuncionarioService {
         System.out.println("Id do cargo:");
         Integer idCargo = scanner.nextInt();
 
+        List<UnidadeTrabalho> unidadesTrabalho = adicionaUnidades(scanner);
+
         Optional<Cargo> cargo = cargoRepository.findById(idCargo);
         Funcionario funcionario = new Funcionario(nome, cpf, salario, cargo.get());
+        funcionario.setUnidadeTrabalhos(unidadesTrabalho);
         funcionarioRepository.save(funcionario);
         System.out.println("Salvo");
+    }
+
+    private List<UnidadeTrabalho> adicionaUnidades(Scanner scanner) {
+        Boolean podeAdicionarUnidades = true;
+        List<UnidadeTrabalho> unidadeTrabalhos = new ArrayList<>();
+
+        while (podeAdicionarUnidades) {
+            System.out.println("Deseja adicionar Unidade de Trabalho?");
+            System.out.println("0 - Não");
+            System.out.println("1 - Sim");
+            Integer opcao = scanner.nextInt();
+
+            if (opcao == 0) {
+                podeAdicionarUnidades = false;
+            } else {
+                System.out.println("Digite o ID da Unidade de Trabalho");
+                Integer idUnidadeTrabalho = scanner.nextInt();
+                UnidadeTrabalho unidadeTrabalho = unidadeRepository.findById(idUnidadeTrabalho).get();
+                unidadeTrabalhos.add(unidadeTrabalho);
+                System.out.println("Unidade de Trabalho adicionada!");
+            }
+        }
+        return unidadeTrabalhos;
     }
 
     private void atualizar(Scanner scanner) {

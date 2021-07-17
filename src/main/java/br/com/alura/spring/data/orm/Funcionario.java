@@ -3,6 +3,7 @@ package br.com.alura.spring.data.orm;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "funcionarios")
@@ -22,6 +23,9 @@ public class Funcionario {
     @ManyToOne
     @JoinColumn(name = "cargo_id", nullable = false)
     private Cargo cargo;
+
+    @ManyToMany
+    private List<UnidadeTrabalho> unidadesTrabalho;
 
     public Funcionario() {
         this.dataContratacao = LocalDate.now();
@@ -62,6 +66,10 @@ public class Funcionario {
 
     public LocalDate getDataContratacao() {
         return dataContratacao;
+    }
+
+    public void setUnidadeTrabalhos(List<UnidadeTrabalho> unidadesTrabalho) {
+        this.unidadesTrabalho = unidadesTrabalho;
     }
 
     @Override

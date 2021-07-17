@@ -39,7 +39,7 @@ public class CursoAluraSpringDataJpaApplication implements CommandLineRunner {
 			System.out.println("0 - Sair");
 			System.out.println("1 - Cargo");
 			System.out.println("2 - Funcionário");
-			System.out.println("3 - Unidade");
+			System.out.println("3 - Unidade de Trabalho");
 
 			int action = scanner.nextInt();
 			if (action == 1) {

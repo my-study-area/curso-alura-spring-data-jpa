@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Entity
-@Table(name = "unidades")
+@Table(name = "unidadesTrabalho")
 public class UnidadeTrabalho {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class UnidadeTrabalho {
     private String descricao;
     private String endereco;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "unidadesTrabalho")
     private List<Funcionario> funcionarios;
 
     public UnidadeTrabalho() {
