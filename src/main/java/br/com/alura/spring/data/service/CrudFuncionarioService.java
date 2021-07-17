@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 @Service
 public class CrudFuncionarioService {
-    private Boolean system = true;
+    private Boolean system;
     private final FuncionarioRepository funcionarioRepository;
     private final CargoRepository cargoRepository;
     private final UnidadeRepository unidadeRepository;
@@ -27,6 +27,7 @@ public class CrudFuncionarioService {
     }
 
     public void inicial(Scanner scanner) {
+        system = true;
         while (system) {
             System.out.println("Qual ação voce quer executar?");
             System.out.println("0 - Sair");
