@@ -74,3 +74,12 @@ Qual a finalidade de utilizarmos o Optional retornado pelo método findById?
 
 ### Aula 02.09 - Para saber mais: Mais métodos
 Caso tenha interesse de saber mais sobre outros repositórios que o framework disponibiliza, você pode acessar a [documentação do Spring Data](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/Repository.html).
+
+### Aula 02.10 - Faça como eu fiz
+
+### Aula 02.11 - O que aprendemos?
+- como utilizar a ferramenta de repositório do framework;
+- inserir um registro dinâmico na base de dados;
+- atualizar registros salvos;
+- deletar um registro por meio do seu ID;
+- visualizar todos os registros salvos.
