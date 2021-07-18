@@ -67,3 +67,10 @@ No framework do Spring Data, quais métodos são utilizados para quais operaçõ
 Qual a finalidade de utilizarmos o Optional retornado pelo método findById?
 
 `R:` O comando pode retornar um elemento, se existir, por isso é usado Optional. O findById sempre devolve um Optional, que sabe se o elemento existe ou não. Assim, não precisamos lidar com null ou tratar uma exceção.
+
+### Aula 02.07 - Desafio
+
+### Aula 02.08 - Solução proposta
+
+### Aula 02.09 - Para saber mais: Mais métodos
+Caso tenha interesse de saber mais sobre outros repositórios que o framework disponibiliza, você pode acessar a [documentação do Spring Data](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/Repository.html).
