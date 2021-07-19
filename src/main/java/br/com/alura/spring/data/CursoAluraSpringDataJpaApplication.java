@@ -3,6 +3,7 @@ package br.com.alura.spring.data;
 import br.com.alura.spring.data.service.CrudCargoService;
 import br.com.alura.spring.data.service.CrudFuncionarioService;
 import br.com.alura.spring.data.service.CrudUnidadeService;
+import br.com.alura.spring.data.service.RelatoriosService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,12 +19,15 @@ public class CursoAluraSpringDataJpaApplication implements CommandLineRunner {
 
 	private final CrudUnidadeService unidadeService;
 
+	private final RelatoriosService relatoriosService;
+
 	private Boolean system = true;
 
-	public CursoAluraSpringDataJpaApplication(CrudCargoService cargoService, CrudFuncionarioService funcionarioService, CrudUnidadeService unidadeService) {
+	public CursoAluraSpringDataJpaApplication(CrudCargoService cargoService, CrudFuncionarioService funcionarioService, CrudUnidadeService unidadeService, RelatoriosService relatoriosService) {
 		this.cargoService = cargoService;
 		this.funcionarioService = funcionarioService;
 		this.unidadeService = unidadeService;
+		this.relatoriosService = relatoriosService;
 	}
 
 	public static void main(String[] args) {
@@ -40,16 +44,27 @@ public class CursoAluraSpringDataJpaApplication implements CommandLineRunner {
 			System.out.println("1 - Cargo");
 			System.out.println("2 - Funcionário");
 			System.out.println("3 - Unidade de Trabalho");
+			System.out.println("4 - Relatórios");
 
 			int action = scanner.nextInt();
-			if (action == 1) {
-				cargoService.inicial(scanner);
-			} else if (action == 2) {
-				funcionarioService.inicial(scanner);
-			} else if(action == 3) {
-				unidadeService.inicial(scanner);
-			} else {
-				system =false;
+
+			switch (action) {
+				case 1:
+					cargoService.inicial(scanner);
+					break;
+				case 2:
+					funcionarioService.inicial(scanner);
+					break;
+				case 3:
+					unidadeService.inicial(scanner);
+					break;
+				case 4:
+					relatoriosService.inicial(scanner);
+					break;
+				default:
+					System.out.println("Finalizando");
+					system = false;
+					break;
 			}
 		}
 	}

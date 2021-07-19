@@ -83,3 +83,9 @@ Caso tenha interesse de saber mais sobre outros repositórios que o framework di
 - atualizar registros salvos;
 - deletar um registro por meio do seu ID;
 - visualizar todos os registros salvos.
+
+## Módulo 03 - Derived Queries, JPQL e Native Queries
+
+### Aula 03.01 - Projeto da aula anterior
+
+### Aula 03.02 - Derived Query
