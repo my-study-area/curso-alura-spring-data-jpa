@@ -89,3 +89,59 @@ Caso tenha interesse de saber mais sobre outros repositórios que o framework di
 ### Aula 03.01 - Projeto da aula anterior
 
 ### Aula 03.02 - Derived Query
+
+### Aula 03.03 - Para saber mais: Mais Derived Queries
+Em vídeo, vimos como buscar funcionários pelo método findByNome dentro do repositório:
+```java
+@Repository
+public interface FuncionarioRepository extends CrudRepository<Funcionario, Integer> {
+    List<Funcionario> findByNome(String nome);
+}
+```
+
+As queries derivadas são simples, mas poderosas, e oferecem mais variações e recursos. Seguem alguns exemplos:
+
+#### Usando Like
+Para executar um like (e não um equals, como no exemplo), use:
+```java
+List<Funcionario> findByNomeLike(String nome);
+```
+
+O valor do parâmetro nome deve usar o pattern, por exemplo:
+```java
+String nome = "%maria%";
+```
+
+#### Starting e Ending
+Você também pode buscar os funcionários pelo prefixo ou sufixo:
+```java
+List<Funcionario> findByNomeEndingWith(String nome)
+```
+
+Ou:
+```java
+List<Funcionario> findByNomeStartingWith(String nome)
+```
+
+#### Null e not Null
+Igualmente podemos pesquisar elemento nulos ou não nulos:
+```java
+List<Funcionario> findByNomeIsNull()
+```
+
+Ou não nulos com:
+```java
+List<Funcionario> findByNomeIsNotNull()
+```
+
+#### Ordenação
+Ainda vamos falar sobre ordenação e páginas, mas claro que a Derived Query pode dar suporte:
+```java
+List<Funcionario> findByNomeOrderByNomeAsc(String nome);
+```
+
+#### Métodos longos
+E como dica, como definimos os critérios de pesquisa por meio do nome do método, precisamos ter cuidado para não criar nomes gigantes e prejudicar a legibilidade. Nesse caso devemos favorecer as consultas com JPQL apresentadas no próximo vídeo.
+
+#### Documentação
+Por fim [aqui está a documentação do Spring Data JPA ](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods), com mais exemplos.
