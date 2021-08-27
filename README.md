@@ -145,3 +145,22 @@ E como dica, como definimos os critérios de pesquisa por meio do nome do métod
 
 #### Documentação
 Por fim [aqui está a documentação do Spring Data JPA ](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods), com mais exemplos.
+
+### Aula 03.04 - Usando JPQL
+Java Persistense Query Language (JPQL) é uma linguagem de consulta semelhante com a SQL e é definida na especificação da JPA. No SQL utilizanos as tabelas e colunas e na JPQL utilizamos as classes e objetos.
+
+Utilizamos JPQL em casos em que as consultas utilizando Query Methods se torna muito extensa, como por exemplo:
+
+```java
+List<Funcionario> findByNomeAndSalarioGreaterThanAndDataContrataca(
+  String nome, Double salario, LocalDate data);
+```
+
+Para utilizarmos `JPQL` utilizamos a anotação `@Query` mais a sintaxe da consulta, como por exemplo:
+```java
+@Query("SELECT f FROM Funcionario f " +
+        "WHERE f.nome = :nome " +
+        "AND f.salario >= :salario " +
+        "AND f.dataContratacao = :data")
+List<Funcionario> findByNomeSalarioMaiorDataContratacao(String nome, Double salario, LocalDate data);
+```
