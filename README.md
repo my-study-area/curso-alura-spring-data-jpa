@@ -164,3 +164,28 @@ Para utilizarmos `JPQL` utilizamos a anotação `@Query` mais a sintaxe da consu
         "AND f.dataContratacao = :data")
 List<Funcionario> findByNomeSalarioMaiorDataContratacao(String nome, Double salario, LocalDate data);
 ```
+
+### Aula 03.05 - Para saber mais: Queries entre relacionamentos
+No Spring Data conseguimos realizar consultas com `Derived Query Methods` e `JPQL` através da anotação `@Query`.
+
+Exemplo de consulta usando `Query Methods`:
+```java
+List<Funcionario> findByCargoDescricao(String descricao);
+```
+
+Exemplo de utilização de JPQL com a anotação `@Query`:
+```java
+@Query("SELECT f FROM Funcionario f JOIN f.cargo c WHERE c.descricao = :descricao")
+List<Funcionario> findByCargoPelaDescricao(String descricao);
+```
+
+Para realizarmos consultas, utilizando os relacionamentos de uma classe com nome uma propriedade de nome composto, como por exemplo através do atributo `unidadesTrabalho` da classe `Funcionario`, devemos seguir o seguinte exemplo:
+```java
+List<Funcionario> findByUnidadeTrabalhos_Descricao(String descricao);
+```
+
+Observe que no exemplo acima não estamos seguindo a convenção do Java, sendo mais interessante a utilização da JPQL com a anotação `@Query`:
+```java
+@Query("SELECT f FROM Funcionario f JOIN f.unidadeTrabalhos u WHERE u.descricao = :descricao")
+List<Funcionario> findByUnidadeTrabalhos_Descricao(String descricao);
+```
