@@ -189,3 +189,12 @@ Observe que no exemplo acima não estamos seguindo a convenção do Java, sendo 
 @Query("SELECT f FROM Funcionario f JOIN f.unidadeTrabalhos u WHERE u.descricao = :descricao")
 List<Funcionario> findByUnidadeTrabalhos_Descricao(String descricao);
 ```
+
+### Aula 03.06 - Completando a aplicação
+Para converter uma data de `String` para `LocalDate`:
+```java
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+String data = "29/08/2021";
+LocalDate dataLocal = LocalDate.parse(data, formatter);
+System.out.println(dataLocal);
+```
