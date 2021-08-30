@@ -198,3 +198,10 @@ String data = "29/08/2021";
 LocalDate dataLocal = LocalDate.parse(data, formatter);
 System.out.println(dataLocal);
 ```
+
+### Aula 03.07 - Native Query
+`Native Query` ou `Query Nativa` é a consulta padrão do SQL, ou seja, ela utiliza o nome das tabelas e colunas do banco de dados para realizar as cosultas. No Spring Data utilizamos a anotação `@Query` com dois parâmetros: `value` que é a consulta SQL e `nativeQuery` com valor true. Observe um exemplo aplicado num repository de uma aplicação utilizando Spring Data:
+```java
+@Query(value = "SELECT * FROM funcionarios f WHERE f.data_contratacao >= :data", nativeQuery = true)
+List<Funcionario> findDataContratacaoMaior(LocalDate data);
+```
