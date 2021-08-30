@@ -210,3 +210,10 @@ List<Funcionario> findDataContratacaoMaior(LocalDate data);
 Qual a diferença entre Derived Query, JPQL e Native Query?
 - `R:` **Derived Queries** - queries criadas através de comandos Java.
 **JPQL** - queries criadas através de uma estrutura SQL, porém com os nomes das entidades Java. **Native Query** - queries padrões SQL que conseguimos executar no nosso Client SQL.
+
+### Aula 03.09 - Faça como eu fiz
+
+### Aula 03.10 - O que aprendemos?
+- como criar consultas atrás de comando java;
+- utilizar JPQL com a anotação `@Query`;
+- parâmetro da anotação `@Query` para executar queries nativas.
