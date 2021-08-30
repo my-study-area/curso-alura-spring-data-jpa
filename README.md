@@ -205,3 +205,8 @@ System.out.println(dataLocal);
 @Query(value = "SELECT * FROM funcionarios f WHERE f.data_contratacao >= :data", nativeQuery = true)
 List<Funcionario> findDataContratacaoMaior(LocalDate data);
 ```
+
+### Aula 03.08 - Qual tipo de query usar?
+Qual a diferença entre Derived Query, JPQL e Native Query?
+- `R:` **Derived Queries** - queries criadas através de comandos Java.
+**JPQL** - queries criadas através de uma estrutura SQL, porém com os nomes das entidades Java. **Native Query** - queries padrões SQL que conseguimos executar no nosso Client SQL.
