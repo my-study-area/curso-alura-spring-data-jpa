@@ -217,3 +217,19 @@ Qual a diferença entre Derived Query, JPQL e Native Query?
 - como criar consultas atrás de comando java;
 - utilizar JPQL com a anotação `@Query`;
 - parâmetro da anotação `@Query` para executar queries nativas.
+
+### Aula 04.01 - Projeto da aula anterior
+
+### Aula 04.02 - Paginação
+Para criarmos paginação no Spring Data devemos extender o nosso repository para `PagingAndSortingRepository`:
+```java
+@Repository
+public interface FuncionarioRepository extends PagingAndSortingRepository<Funcionario, Integer> {
+}
+```
+
+E adicionarmos uma `Pageable`, como parâmetro, em nosso método de consulta:
+```java
+PageRequest pageable = PageRequest.of(page, 5, Sort.unsorted());
+Page<Funcionario> funcionarios = funcionarioRepository.findAll(pageable);
+```

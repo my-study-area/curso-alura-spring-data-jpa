@@ -6,6 +6,9 @@ import br.com.alura.spring.data.orm.UnidadeTrabalho;
 import br.com.alura.spring.data.repository.CargoRepository;
 import br.com.alura.spring.data.repository.FuncionarioRepository;
 import br.com.alura.spring.data.repository.UnidadeRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -46,7 +49,7 @@ public class CrudFuncionarioService {
                     this.atualizar(scanner);
                     break;
                 case 3:
-                    this.visualizar();
+                    this.visualizar(scanner);
                     break;
                 case 4:
                     this.deletar(scanner);
@@ -126,8 +129,16 @@ public class CrudFuncionarioService {
         System.out.println("Atualizado");
     }
 
-    private void visualizar() {
-        Iterable<Funcionario> funcionarios = funcionarioRepository.findAll();
+    private void visualizar(Scanner scanner) {
+        System.out.println("Qual página você deseja visualizar?");
+        int page  = scanner.nextInt();
+
+        PageRequest pageable = PageRequest.of(page, 5, Sort.unsorted());
+        Page<Funcionario> funcionarios = funcionarioRepository.findAll(pageable);
+
+        System.out.println(funcionarios);
+        System.out.println("Página atual " + funcionarios.getNumber());
+        System.out.println("Total de elementos " + funcionarios.getTotalElements());
         funcionarios.forEach(System.out::println);
     }
 
