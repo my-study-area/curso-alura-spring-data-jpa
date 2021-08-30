@@ -233,3 +233,32 @@ E adicionarmos uma `Pageable`, como parâmetro, em nosso método de consulta:
 PageRequest pageable = PageRequest.of(page, 5, Sort.unsorted());
 Page<Funcionario> funcionarios = funcionarioRepository.findAll(pageable);
 ```
+
+### Aula 04.03 - Para saber mais: Paginação e Derived Query
+Nas aulas anteriores vimos como buscar funcionários pelo nome usando o método **findByNome**:
+
+```java
+@Repository
+public interface FuncionarioRepository extends PagingAndSortingRepository <Funcionario, Integer> {
+
+    List<Funcionario> findByNome(String nome);
+
+    //outros métodos omitidos
+}
+```
+
+Será que a paginação também funciona com esse tipo de método? Claro que sim, basta passar o `Pageable` como parâmetro. Veja o exemplo:
+
+```java
+@Repository
+public interface FuncionarioRepository extends PagingAndSortingRepository <Funcionario, Integer> {
+
+    List<Funcionario> findByNome(String nome);
+
+    //novo método com paginação
+    List<Funcionario> findByNome(String nome, Pageable pageable);
+
+    //outros métodos omitidos
+}
+```
+A criação do objeto Pageable fica como foi explicado no vídeo usando o **PageRequest**. Lembrando também que a interface **FuncionarioRepository** deve estender o `PagingAndSortingRepository`.
