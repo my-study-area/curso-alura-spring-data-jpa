@@ -268,3 +268,10 @@ A criação do objeto Pageable fica como foi explicado no vídeo usando o **Page
   - [CrudRepository](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/CrudRepository.html): é uma interface filha de `Repository` e é uma interface genérica para CRUD.
   - [PagingAndSortingRepository](https://docs.spring.io/spring-data/commons/docs/current/api/org/springframework/data/repository/PagingAndSortingRepository.html): é a interface filha de `CrudRepository` e adiciona a paginação e ordenação.
   - [JpaRepository](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html):  é uma interface filha de `PagingAndSortingRepository` e trabalha muito bem com arquivos em lotes.
+
+  ### Aula 04.05 - Ordenação
+  Para ordenarmos a consulta devemos alterar o construtor de `PageRequest.of(page, 5, Sort.unsorted());`, alterando o parâmetro de ordenação de `Sort.unsorted()` para `Sort.by(Sort.Direction.ASC, "nome")`. Onde `Sort.Direction` pode ser receber o valor crescente ou decrescente, mais o nome da propriedade da classe que será ordenada. Exemplo:
+  ```java
+  // PageRequest.of(page, 5, Sort.unsorted());
+  PageRequest.of(page, 5, Sort.by(Sort.Direction.ASC, "nome"));
+  ```
