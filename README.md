@@ -275,3 +275,10 @@ A criação do objeto Pageable fica como foi explicado no vídeo usando o **Page
   // PageRequest.of(page, 5, Sort.unsorted());
   PageRequest.of(page, 5, Sort.by(Sort.Direction.ASC, "nome"));
   ```
+
+  ### Aula 04.06 - Como paginar?
+  Quando utilizamos o repositório `PagingAndSortingRepository`, adicionamos à nossa aplicação todo o poder da paginação. Porém, para utilizarmos de fato esse poder, devemos passar um atributo no método findAll.
+
+  Qual o atributo e por que o usamos?
+
+  `R:` `Pageable` - enviamos esse objeto pois nele encapsulamos a página, a quantidade de itens por página e qual o tipo de ordenação. Enviamos esse objeto como parâmetro para informarmos ao nosso repository as informações que queremos receber na nossa paginação.
