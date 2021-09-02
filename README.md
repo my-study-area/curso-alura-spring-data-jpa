@@ -290,3 +290,24 @@ A criação do objeto Pageable fica como foi explicado no vídeo usando o **Page
 - a existência de um repositório específico para paginação;
 - cada repositório tem um propósito para existir;
 - ordenar nossas consultas dentro do framework.
+
+### Aula 05.01 - Projeto da aula anterior
+
+### Aula 05.02 - Criação da projeção
+Projeções são utilizadas em casos que não precisamos de todas as informações de uma entidade, como por exemplo, um relatório com somente o id, nome e salário.
+
+Exemplo de uma interface de projeção:
+```java
+public interface FuncionarioProjecao {
+    Integer getId();
+    String getNome();
+    Double getSalario();
+}
+```
+
+Exemplo de consulta utilizando uma projeção:
+```java
+@Query(value = "SELECT f.id, f.nome, f.salario FROM funcionarios f",
+        nativeQuery = true)
+List<FuncionarioProjecao> findFuncionarioSalario();
+```
