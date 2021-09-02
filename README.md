@@ -311,3 +311,5 @@ Exemplo de consulta utilizando uma projeção:
         nativeQuery = true)
 List<FuncionarioProjecao> findFuncionarioSalario();
 ```
+
+### Aula 05.03 - Visualizando a projeção
