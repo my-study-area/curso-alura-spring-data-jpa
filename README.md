@@ -313,3 +313,8 @@ List<FuncionarioProjecao> findFuncionarioSalario();
 ```
 
 ### Aula 05.03 - Visualizando a projeção
+
+### Aula 05.04 - Qual o porquê dessa interface?
+Quando fazemos projeções com o Spring Data, temos que criar uma interface dentro do nosso projeto. Qual é a função dessa interface?
+
+`R:` Criar uma entidade projetada contendo os atributos que queremos apresentar. O objetivo de criar essa interface é encapsular os valores de retorno da consulta dentro de métodos.
