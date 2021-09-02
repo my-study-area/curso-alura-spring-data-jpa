@@ -357,3 +357,11 @@ Repare na classe `FuncionarioDto` como tipo genérico da lista no retorno do mé
 Uma classe dá muito mais trabalho de escrever e manter, mas pode ter uma vantagem, pois podemos adicionar métodos mais específicos que podem fazer sentido para a view (por exemplo, os de formatação).
 
 > obs.: o sufixo Dto é muito comum para esse tipo de classe auxiliar, e significa Data Transfer Object.
+
+### Aula 05.06 - Faça como eu fiz
+
+### Aula 05.07 - O que aprendemos?
+- o que são projeções;
+- como criar queries projetadas dentro do framework Spring Data;
+- criar uma entidade projetada para reduzir o tempo de consulta do banco de dados;
+- a diferença entre interface e class-based projections.
