@@ -365,3 +365,49 @@ Uma classe dá muito mais trabalho de escrever e manter, mas pode ter uma vantag
 - como criar queries projetadas dentro do framework Spring Data;
 - criar uma entidade projetada para reduzir o tempo de consulta do banco de dados;
 - a diferença entre interface e class-based projections.
+
+### Aula 06.01 - Projeto da aula anterior
+
+### Aula 06.02 - Estrutura da Specification
+O Spring Data Jpa já nós traz a facilidade de criarmos consultas dinâmicas através do uso de query methods, porém em grandes aplicações podemos encontrar a desvantagem de acumular uma grande quantidade de métodos e com os critérios de consultas são fixos. Por exemplo, não conseguimos combinar duas consultas em mum único método.
+
+A Criteria API resolove o problema acima, adicionando diversas linhas de código que não são tão simples de serem interpretadas. Pensando nisso e na utilização de consultas dinâmicas com parâmetros opcionais que o ṕadrão specification foi implementado no Spring Data Jpa. Acompanhe os passos para realizar o seu uso:
+
+- adicione a interface `JpaSpecificationExecutor` em seu repository:
+```java
+@Repository
+public interface FuncionarioRepository extends PagingAndSortingRepository<Funcionario, Integer>,
+        JpaSpecificationExecutor<Funcionario> {
+}
+```
+
+- agora criamos uma `Specification`:
+```java
+public class SpecificationFuncionario {
+    public static Specification<Funcionario> nome(String nome) {
+        return ((root, criteriaQuery, criteriaBuilder) ->
+            criteriaBuilder.like(root.get("nome"), "%" + nome + "%"));
+    }
+}
+```
+
+- exemplo de consulta usando `Specification`:
+```java
+private final FuncionarioRepository funcionarioRepository;
+
+public RelatorioFuncionarioDinamico(FuncionarioRepository funcionarioRepository) {
+    this.funcionarioRepository = funcionarioRepository;
+}
+
+public void inicial(Scanner scanner) {
+    System.out.println("Digite um nome:");
+    String nome = scanner.next();
+    List<Funcionario> funcionarios = funcionarioRepository
+            .findAll(Specification.where(SpecificationFuncionario.nome(nome)));
+}
+```
+
+Referências:
+- [Sprig DataJpa Specifications e Querydsl](https://spring.io/blog/2011/04/26/advanced-spring-data-jpa-specifications-and-querydsl/)
+- [Spring Data e o padrão Specification: Simplifique a construção e o reuso de consultas](https://www.devmedia.com.br/spring-data-e-o-padrao-specification-simplifique-a-construcao-e-o-reuso-de-consultas/38103)
+- [Linguagem de consulta REST com especificações Spring Data JPA](https://www.baeldung.com/rest-api-search-language-spring-data-specifications)
