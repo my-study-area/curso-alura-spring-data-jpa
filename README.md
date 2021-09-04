@@ -411,3 +411,7 @@ Referências:
 - [Sprig DataJpa Specifications e Querydsl](https://spring.io/blog/2011/04/26/advanced-spring-data-jpa-specifications-and-querydsl/)
 - [Spring Data e o padrão Specification: Simplifique a construção e o reuso de consultas](https://www.devmedia.com.br/spring-data-e-o-padrao-specification-simplifique-a-construcao-e-o-reuso-de-consultas/38103)
 - [Linguagem de consulta REST com especificações Spring Data JPA](https://www.baeldung.com/rest-api-search-language-spring-data-specifications)
+
+### Aula 06.03 - O que é essa Specification?
+Quando criamos consultas dinâmicas, utilizamos a Specification. Qual é o seu papel na criação das consultas dinâmicas?
+- `R:` Ter um objeto com todos os itens necessários para realizar uma consulta dinâmica, como por exemplo root, criteriaQuery e criteriaBuilder. O objetivo é entregar, ao desenvolver um objeto pronto, para que ele só tenha que se preocupar com qual operação SQL ele deseja executar.
