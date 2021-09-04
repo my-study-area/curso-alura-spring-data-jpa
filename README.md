@@ -415,3 +415,6 @@ Referências:
 ### Aula 06.03 - O que é essa Specification?
 Quando criamos consultas dinâmicas, utilizamos a Specification. Qual é o seu papel na criação das consultas dinâmicas?
 - `R:` Ter um objeto com todos os itens necessários para realizar uma consulta dinâmica, como por exemplo root, criteriaQuery e criteriaBuilder. O objetivo é entregar, ao desenvolver um objeto pronto, para que ele só tenha que se preocupar com qual operação SQL ele deseja executar.
+
+### Aula 06.04 - Compondo Specifications
+
