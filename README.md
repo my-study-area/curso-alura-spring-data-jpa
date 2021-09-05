@@ -418,3 +418,4 @@ Quando criamos consultas dinâmicas, utilizamos a Specification. Qual é o seu p
 
 ### Aula 06.04 - Compondo Specifications
 
+### Aula 06.05 - Executando a pesquisa dinâmica

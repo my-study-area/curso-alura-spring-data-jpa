@@ -4,13 +4,14 @@ import br.com.alura.spring.data.orm.Funcionario;
 import br.com.alura.spring.data.repository.FuncionarioRepository;
 import br.com.alura.spring.data.specfication.SpecificationFuncionario;
 import org.springframework.data.jpa.domain.Specification;
-import org.springframework.util.StringUtils;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
+@Service
 public class RelatorioFuncionarioDinamico {
     private final FuncionarioRepository funcionarioRepository;
     private  final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
