@@ -419,3 +419,38 @@ Quando criamos consultas dinâmicas, utilizamos a Specification. Qual é o seu p
 ### Aula 06.04 - Compondo Specifications
 
 ### Aula 06.05 - Executando a pesquisa dinâmica
+
+### Aula 06.06 - Para saber mais: MongoDB
+É importante ressaltar que o framework do `Spring Data` permite a utilização de banco de dados relacionais, conforme estamos aprendendo, entretanto, ele também permite o uso de banco de dados não relacionais. Vamos ver como podemos utilizar o framework com o MongoDB, considerando que existem outras possibilidades de uso para bancos não relacionais.
+
+Quando queremos utilizar um banco de dados não relacional, não há necessidade de adicionarmos a dependência do `JPA`, nem mesmo do drive do banco, pois o Spring já entrega para nós uma dependência com tudo o que for necessário para acessarmos esse terminado banco. Por exemplo, o `MongoDB` utiliza a seguinte dependência:
+```xml
+<dependency>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-starter-data-mongodb</artifactId>
+</dependency>
+```
+
+Apesar do acesso ao banco dentro do arquivo de propriedade ser bem semelhante, as tags mudam um pouco, sai o:
+```properties
+spring.datasource.url=jdbc:mariadb://{URL}:{PORTA}/{NOME_DO_BANCO}
+```
+
+E entra a tag:
+```properties
+spring.data.mongodb.uri: mongodb://{URL}:{PORTA}/{NOME_DO_BANCO}
+```
+
+> obs.: Em alguns bancos não relacionais, é muito comum adicionar o usuário e senha na própria URI, entretanto o Spring também nos dá a opção de adicionarmos os valores de forma apartada:
+
+```properties
+spring.data.mongodb.username=root
+spring.data.mongodb.password=root
+spring.data.mongodb.database=test_db
+spring.data.mongodb.port=27017
+spring.data.mongodb.host=localhost
+```
+
+Com a alteração para um banco de dados não relacional, deixamos de lado nosso `CrudRepository`, pois o Spring nos entrega um repositório específico para cada tipo de banco de dados não relacional, e dentro dele já temos todos os recursos encapsulados.
+
+No caso do Mongo, utilizamos a interface `MongoRepository`. Esse repositório segue o mesmo princípio dos demais, sendo necessário passar no diamante o objeto que desejamos manipular, e o tipo do seu ID. Pronto! Basta utilizar esses passos que sua aplicação vai trabalhar perfeitamente com banco de dados não relacionais.
