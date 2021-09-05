@@ -454,3 +454,14 @@ spring.data.mongodb.host=localhost
 Com a alteração para um banco de dados não relacional, deixamos de lado nosso `CrudRepository`, pois o Spring nos entrega um repositório específico para cada tipo de banco de dados não relacional, e dentro dele já temos todos os recursos encapsulados.
 
 No caso do Mongo, utilizamos a interface `MongoRepository`. Esse repositório segue o mesmo princípio dos demais, sendo necessário passar no diamante o objeto que desejamos manipular, e o tipo do seu ID. Pronto! Basta utilizar esses passos que sua aplicação vai trabalhar perfeitamente com banco de dados não relacionais.
+
+### Aula 06.07 - Faça como eu fiz
+
+### Aula 06.08 - Projeto final do curso
+- [Download do projeto final](https://github.com/alura-cursos/1795-curso-spring-data/archive/master.zip)
+
+### Aula 06.09 - O que aprendemos?
+- criar queries dinâmicas baseada na API de Criteria do JPA;
+- dar ao cliente o poder de escolha sem a necessidade de alterar o código da aplicação;
+- como utilizar as Specification;
+- a praticidade de se realizar a consulta pelo framework em relação ao JPA puro.
