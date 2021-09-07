@@ -465,3 +465,13 @@ No caso do Mongo, utilizamos a interface `MongoRepository`. Esse repositório se
 - dar ao cliente o poder de escolha sem a necessidade de alterar o código da aplicação;
 - como utilizar as Specification;
 - a praticidade de se realizar a consulta pelo framework em relação ao JPA puro.
+
+### Aula 06.10 - Conclusão
+Durante o curso foi possível aprender sobre:
+- configurar o banco de dados e JPA no arquivo `src/main/resources/application.properties`
+- criar classes que representam as entidades (tabelas) do banco de dados utilizando a anotação `@Entity` e etc
+- criar as operações de CRUD através de uma repository que pode estender de `CrudRepository`, `PagingAndSortingRepository` ou `JpaRepository`
+- criar consultas SQL utilizando `Derived Query Methods`, `JPQL` ou `Queries Nativas` nas interface de repository
+- conseguimos criar paginação e ordenação estendendo o repository de `PagingAndSortingRepository` ou `JpaRepository`
+- a utilização de Projeções e a diferença de uso em relação ao `DTO`
+- aprendemos a criar queries dinâmicas utilizando `Specification` que substitui as diversas linhas de código geradas na utilização do `criteriaBuilder`.
