@@ -218,6 +218,8 @@ Qual a diferença entre Derived Query, JPQL e Native Query?
 - utilizar JPQL com a anotação `@Query`;
 - parâmetro da anotação `@Query` para executar queries nativas.
 
+
+## Módulo 04 - Paginação e Ordenação
 ### Aula 04.01 - Projeto da aula anterior
 
 ### Aula 04.02 - Paginação
@@ -291,6 +293,7 @@ A criação do objeto Pageable fica como foi explicado no vídeo usando o **Page
 - cada repositório tem um propósito para existir;
 - ordenar nossas consultas dentro do framework.
 
+## Módulo 05 - Trabalhando com Projeções
 ### Aula 05.01 - Projeto da aula anterior
 
 ### Aula 05.02 - Criação da projeção
@@ -366,6 +369,7 @@ Uma classe dá muito mais trabalho de escrever e manter, mas pode ter uma vantag
 - criar uma entidade projetada para reduzir o tempo de consulta do banco de dados;
 - a diferença entre interface e class-based projections.
 
+## Módulo 06 - Consultas dinâmicas
 ### Aula 06.01 - Projeto da aula anterior
 
 ### Aula 06.02 - Estrutura da Specification
